@@ -2,19 +2,15 @@
 import { useState, useMemo, useEffect } from "react";
 import { debounce } from "@/lib/utils";
 import { FaSpinner } from "react-icons/fa";
-
-interface Product {
-  id: number;
-  name: string;
-}
+import ProductSearch from "@/types/productSearch.types";
 
 export default function Search() {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Product[]>([]);
+  const [results, setResults] = useState<ProductSearch[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
-  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [allProducts, setAllProducts] = useState<ProductSearch[]>([]);
 
   // on mount => fetch all products
   useEffect(() => {
@@ -22,7 +18,7 @@ export default function Search() {
       try {
         const res = await fetch("/api/products");
         if (!res.ok) throw new Error("Failed to fetch all products");
-        const data: Product[] = await res.json();
+        const data: ProductSearch[] = await res.json();
         setAllProducts(data);
       } catch {
         setError("Failed to load all products.");
@@ -44,7 +40,7 @@ export default function Search() {
     try {
       const res = await fetch(`/api/products?query=${searchTerm}`);
       if (!res.ok) throw new Error("Failed to fetch");
-      const data: Product[] = await res.json();
+      const data: ProductSearch[] = await res.json();
       setResults(data);
     } catch {
       setError("Something went wrong!");
@@ -63,7 +59,7 @@ export default function Search() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
+    <div className="max-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
       <h1 className="text-3xl font-bold text-blue-700 mb-10">
         🧠 Debounced Product Search
       </h1>
