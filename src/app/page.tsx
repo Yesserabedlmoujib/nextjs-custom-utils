@@ -1,4 +1,5 @@
 import Filters from "./filters/page";
+import Register from "./register/page";
 import Search from "./search/page";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
       <Search />
       <Filters/>
+      <Register/>
     </div>
   );
 }

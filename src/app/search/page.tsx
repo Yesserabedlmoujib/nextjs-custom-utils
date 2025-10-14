@@ -61,12 +61,17 @@ export default function Search() {
   return (
     <div className="max-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
       <h1 className="text-3xl font-bold text-blue-700 mb-10">
-        🧠 Debounced Product Search
+        Debounced Product Search
       </h1>
-
+      {/* Alternative concise version */}
+      <p className="text-gray-600 text-center max-w-2xl mb-10 text-sm">
+        <strong>Debouncing in action:</strong> This search delays API calls by
+        600ms after typing stops, preventing unnecessary requests and providing
+        a smoother user experience while reducing server load.
+      </p>
       <div className="grid md:grid-cols-3 gap-8 w-full max-w-6xl">
         {/* Here we display all Products */}
-        <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+        <div className="bg-stone-100 p-6 rounded-2xl shadow-lg shadow-yellow-500 border border-gray-100">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
             All Products
           </h2>
@@ -83,7 +88,7 @@ export default function Search() {
         </div>
 
         {/* Here is the Search Section */}
-        <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between min-h-[250px]">
+        <div className="bg-stone-100 p-6 rounded-2xl shadow-lg shadow-blue-500 border border-gray-100 flex flex-col justify-between min-h-[250px]">
           <div>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Search</h2>
             <input
@@ -112,7 +117,7 @@ export default function Search() {
         </div>
 
         {/* Here is the Search Results */}
-        <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+        <div className="bg-stone-100 p-6 rounded-2xl shadow-lg shadow-emerald-300 border border-gray-100">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
             Search Results
           </h2>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { debounce } from "@/lib/utils";
 import { FaSpinner } from "react-icons/fa";
 import {
@@ -45,10 +45,18 @@ export default function FiltersPage() {
   return (
     <div className="max-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
       <h1 className="text-3xl font-bold text-blue-700 mb-10">
-        🧾 Product Filters
+        Product Filters
       </h1>
+      {/* Educational description about debounced filtering */}
+      <p className="text-gray-600 text-center max-w-2xl mb-10 text-sm leading-relaxed">
+        <strong>How Debounced Filtering Works:</strong> These filters use a
+        500ms debounce delay that triggers only after you stop adjusting values.
+        This prevents rapid, consecutive API calls when changing price ranges or
+        categories, reducing server strain and providing smoother interaction
+        while maintaining real-time responsiveness.
+      </p>
       <div className="grid md:grid-cols-2 gap-6 w-full max-w-6xl">
-        <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 mb-8">
+        <div className="w-full max-w-md bg-stone-100 shadow-lg shadow-blue-500 rounded-xl p-6 mb-8">
           <div className="mb-4">
             <label className="block text-gray-700 mb-2 font-medium">
               Category
@@ -103,7 +111,7 @@ export default function FiltersPage() {
             ? products.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-white border rounded-xl shadow-md p-4 hover:shadow-lg transition flex flex-col gap-2"
+                  className="bg-stone-100 border rounded-xl shadow-md shadow-emerald-600 p-4 hover:shadow-lg transition flex flex-col gap-2"
                 >
                   <h3 className="font-semibold text-gray-800 text-lg">
                     {p.name}
