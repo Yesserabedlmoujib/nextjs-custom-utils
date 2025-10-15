@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 interface NavLink {
   name: string;
@@ -34,6 +34,7 @@ const MobileNav: React.FC = () => {
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent>
+        <SheetTitle className="sr-only"></SheetTitle>
         {/* logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">

@@ -6,7 +6,10 @@ import Search from "./debounceExamples/search/page";
 export default function Home() {
   return (
     <>
-    <MiniHeader/>
+      <div className="hidden xl:block">
+        <MiniHeader />
+      </div>
+
       <Search />
       <Filters />
       <Register />
