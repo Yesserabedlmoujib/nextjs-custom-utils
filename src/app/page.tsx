@@ -1,13 +1,15 @@
-import Filters from "./filters/page";
-import Register from "./register/page";
-import Search from "./search/page";
+import MiniHeader from "@/components/MiniHeader";
+import Filters from "./debounceExamples/filters/page";
+import Register from "./debounceExamples/register/page";
+import Search from "./debounceExamples/search/page";
 
 export default function Home() {
   return (
-    <div>
+    <>
+    <MiniHeader/>
       <Search />
-      <Filters/>
-      <Register/>
-    </div>
+      <Filters />
+      <Register />
+    </>
   );
 }
