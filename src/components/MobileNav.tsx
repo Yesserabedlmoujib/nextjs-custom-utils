@@ -1,59 +1,61 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
-interface NavItem {
+interface NavLink {
   name: string;
-  href: string;
+  path: string;
 }
 
-const navItems: NavItem[] = [
+const links: NavLink[] = [
   {
-    name: "Search",
-    href: "search",
+    name: "debounce",
+    path: "/",
   },
   {
-    name: "Filters",
-    href: "filters",
+    name: "throttle",
+    path: "/throttleExamples",
   },
   {
-    name: "Register",
-    href: "register",
+    name: "deepClone",
+    path: "/deepClone",
   },
 ];
 
 const MobileNav: React.FC = () => {
-  const scrollToSection = (id: string): void => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const pathname = usePathname();
 
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-secondary mr-4" />
+        <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent>
-        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         {/* logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
-              Yesser Abdelmoujib<span className="text-blue-500">.</span>
+              JS Utils Demo<span className="text-yellow-500">.</span>
             </h1>
           </Link>
         </div>
         {/* nav */}
-        <nav className="flex flex-col justify-center items-center gap-8 font-bold text-blue-500">
-          {navItems.map((item) => {
+        <nav className="flex flex-col justify-center items-center gap-8">
+          {links.map((link, index) => {
             return (
-              <button
-                onClick={() => scrollToSection(item.href)}
-                key={item.name}
+              <Link
+                href={link.path}
+                key={index}
+                className={`${
+                  link.path === pathname &&
+                  "text-yellow-600 border-b-2 border-yellow-500"
+                } text-xl capitalize hover:text-accent transition-all`}
               >
-                {item.name}
-              </button>
+                {link.name}
+              </Link>
             );
           })}
         </nav>

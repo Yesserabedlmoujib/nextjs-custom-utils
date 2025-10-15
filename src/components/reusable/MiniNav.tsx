@@ -1,27 +1,28 @@
 "use client";
 
-const navItems = [
-  {
-    name: "Search",
-    href: "search",
-  },
-  {
-    name: "Filters",
-    href: "filters",
-  },
-  {
-    name: "Register",
-    href: "register",
-  },
-];
+interface NavItem {
+  name: string;
+  href: string;
+}
 
-const MiniNav = () => {
+interface MiniNavProps {
+  items?: NavItem[];
+}
+
+const MiniNav = ({
+  items = [
+    { name: "Search", href: "search" },
+    { name: "Filters", href: "filters" },
+    { name: "Register", href: "register" },
+  ],
+}: MiniNavProps) => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <nav className="flex gap-8">
-      {navItems.map((item) => {
+      {items.map((item) => {
         return (
           <button onClick={() => scrollToSection(item.href)} key={item.name}>
             {item.name}

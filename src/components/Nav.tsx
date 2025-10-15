@@ -9,8 +9,8 @@ const links = [
     path: "/",
   },
   {
-    name: "ScrollProgress",
-    path: "/throttleExamples/scroll-progress",
+    name: "throttle",
+    path: "/throttleExamples",
   },
   {
     name: "deepClone",

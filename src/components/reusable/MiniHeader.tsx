@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import MiniNav from "./MiniNav";
-import MobileNav from "./MobileNav";
 
-const MiniHeader: React.FC = () => {
+interface MiniHeaderProps {
+  navItems?: Array<{ name: string; href: string }>;
+}
+
+const MiniHeader: React.FC<MiniHeaderProps> = ({ navItems }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -25,11 +28,7 @@ const MiniHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto flex justify-center items-center">
         {/* desktop nav */}
         <div className="text-white font-semibold hidden xl:flex items-center gap-8">
-          <MiniNav />
-        </div>
-        {/* mobile nav */}
-        <div className="xl:hidden">
-          <MobileNav />
+          <MiniNav items={navItems} />
         </div>
       </div>
     </header>

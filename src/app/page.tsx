@@ -1,4 +1,4 @@
-import MiniHeader from "@/components/MiniHeader";
+import MiniHeader from "@/components/reusable/MiniHeader";
 import Filters from "./debounceExamples/filters/page";
 import Register from "./debounceExamples/register/page";
 import Search from "./debounceExamples/search/page";

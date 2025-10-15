@@ -1,8 +1,8 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
 import { debounce } from "@/lib/utils";
-import { FaSpinner } from "react-icons/fa";
 import ProductSearch from "@/types/productSearch.types";
+import { useEffect, useMemo, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 export default function Search() {
   const [query, setQuery] = useState("");
