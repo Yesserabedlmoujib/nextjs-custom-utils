@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import ProductFilter from "@/types/productFilter";
+import ProductFilter from "@/types/productFilter.types";
 
 export default function Filters() {
   const [category, setCategory] = useState("All");

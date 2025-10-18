@@ -14,7 +14,7 @@ const links = [
   },
   {
     name: "deepClone",
-    path: "/deepClone",
+    path: "/deepCloneExamples",
   },
 ];
 
