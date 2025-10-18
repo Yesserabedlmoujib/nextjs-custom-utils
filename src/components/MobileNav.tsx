@@ -21,7 +21,7 @@ const links: NavLink[] = [
   },
   {
     name: "deepClone",
-    path: "/deepClone",
+    path: "/deepCloneExamples",
   },
 ];
 

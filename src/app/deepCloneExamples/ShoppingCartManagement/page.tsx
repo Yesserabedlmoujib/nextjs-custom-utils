@@ -114,8 +114,8 @@ export default function ShoppingCart() {
 
   return (
     <section
-      id="Infinite Scroll API Loader"
-      className="flex flex-col items-center justify-center min-h-screen pt-30 px-4 xl:px-0 mb-6"
+      id="ShoppingCart"
+      className="flex flex-col items-center justify-center min-h-screen pt-34 px-4 xl:px-0 mb-6"
     >
       <div className="w-full max-w-6xl text-center mb-6 sm:mb-8 md:mb-10">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-600 mb-3 sm:mb-4">
