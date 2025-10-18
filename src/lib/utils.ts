@@ -37,3 +37,40 @@ export function throttle<T extends (...args: any[]) => void>(
     }
   };
 }
+
+export function deepClone<T>(obj: T, hash = new WeakMap()): T {
+  // Handle primitives and null/undefined
+  if (obj === null || typeof obj !== "object") return obj;
+
+  // Handle circular references
+  if (hash.has(obj)) return hash.get(obj);
+
+  // Handle Date
+  if (obj instanceof Date) return new Date(obj.getTime()) as T;
+
+  // Handle RegExp
+  if (obj instanceof RegExp) return new RegExp(obj) as T;
+
+  // Handle Array
+  if (Array.isArray(obj)) {
+    const clonedArray: any[] = [];
+    hash.set(obj, clonedArray);
+    obj.forEach((item, index) => {
+      clonedArray[index] = deepClone(item, hash);
+    });
+    return clonedArray as T;
+  }
+
+  // Handle Object
+  const clonedObj = Object.create(Object.getPrototypeOf(obj));
+  hash.set(obj, clonedObj);
+
+  // Clone all properties
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clonedObj[key] = deepClone(obj[key], hash);
+    }
+  }
+
+  return clonedObj;
+}
