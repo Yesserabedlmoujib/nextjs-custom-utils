@@ -1,4 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JavaScript Utilities Demo
+
+A Next.js demonstration project showcasing practical implementations of key JavaScript concepts including debounce, throttle, and deep cloning.
+
+## Features
+
+- **Debounce Examples**: 
+  - **Product Search**: 600ms delayed API calls after typing stops
+  - **Form Validation**: 700ms delayed username/email availability checks
+  - **Product Filters**: 500ms delayed filtering for categories and price ranges
+- **Throttle Examples**: 
+  - **Scroll Progress**: 100ms throttled scroll tracking for smooth progress bar
+  - **Parallax Effects**: 20ms throttled scroll for optimized 50 FPS animations
+  - **Infinite Scroll**: 1000ms throttled scroll position checks for API loading
+- **Deep Clone Examples**:
+  - **Shopping Cart**: Safe state management with quantity updates, discounts, and cart operations
+  - **Resume Builder**: Complex nested state with undo functionality and form management
+  - **State Safety**: Prevents mutations in React state with complete object copies
+
+## Prerequisites
+
+Before running this project, make sure you have:
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
 
 ## Getting Started
 
@@ -13,7 +43,6 @@ pnpm dev
 # or
 bun dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
