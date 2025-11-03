@@ -2,7 +2,7 @@
 "use client";
 
 import { deepClone } from "@/lib/utils";
-import CartItem from "@/types/ShoppingCart.types";
+import CartItem from "@/types/shoppingCart.types";
 import { useState } from "react";
 
 const initialCart: CartItem[] = [
