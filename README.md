@@ -29,6 +29,15 @@ Before running this project, make sure you have:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+## Install dependencies
+  ```bash
+  npm install
+  # or
+  yarn install
+  # or
+  pnpm install
+  # or
+  bun install
 
 ## Getting Started
 
