@@ -1,6 +1,7 @@
 import MiniHeader from "@/components/reusable/MiniHeader";
 import ResumeBuilder from "./formStateManagement/page";
 import ShoppingCart from "./shoppingCartManagement/page";
+import ProjectBoard from "./project-board/page";
 
 export default function throttle() {
   return (
@@ -11,13 +12,14 @@ export default function throttle() {
           { name: " Resume Builder ", href: "Resume Builder" },
 
           {
-            name: "Infinite Scroll API Loader",
-            href: "Infinite Scroll API Loader",
+            name: "Project Board",
+            href: "ProjectBoard",
           },
         ]}
       />
       <ShoppingCart />
       <ResumeBuilder />
+      <ProjectBoard />
     </>
   );
 }
